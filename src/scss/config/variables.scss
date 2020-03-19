@@ -1,0 +1,122 @@
+//----------  variables
+//------------------------------------------------------------------------------
+
+$font-default: 'Quicksand', sans-serif;
+$bold: 700;
+$semi-bold: 600;
+$medium: 500;
+$light: 300;
+$italic: italic;
+
+// Colors
+$white: #fff;
+$black: #000;
+$petrol: #0b3c5d;
+$petrol-light: #767c89;
+$petrol-medium: #859dae;
+$petrol-gray: #acc0cc;
+$petrol-dark: #1b2f3b;
+$gray-light: #e9ecee;
+$gray: #eaedf0;
+$blue: #66aad5;
+$blue-dark: #1c4055;
+$gblue-1: #69a9e4;
+$gblue-2: #61b0e5;
+$gblue-3: #5bb7e4;
+$gblue-4: #5abee3;
+$gblue-5: #5dc4e0;
+$yellow: #e6aa3d;
+$yellow-link: #edad2d;
+$orange: #f3c570;
+$orange-light: #fff8eb;
+
+$site-colors: (
+	'black': $black,
+	'white': $white,
+	'petrol': $petrol
+) !default;
+
+//----------  Bootstrap grid
+//------------------------------------------------------------------------------
+
+$enable-grid-classes: true !default;
+
+//----------  Media queries breakpoints - Grid breakpoint
+//------------------------------------------------------------------------------
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+) !default;
+
+//----------  Grid containers
+//------------------------------------------------------------------------------
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+) !default;
+
+//----------  Grid columns
+//------------------------------------------------------------------------------
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+
+//
+// UIkit
+//
+
+// Breakpoints
+$breakpointSmall: 640px;
+$breakpointMedium: 960px;
+$breakpointLarge: 1200px;
+$breakpointXlarge: 1600px;
+$breakpointXsmallMax: ($breakpointSmall - 1);
+$breakpointSmallMax: ($breakpointMedium - 1);
+$breakpointMediumMax: ($breakpointLarge - 1);
+$breakpointLargeMax: ($breakpointXlarge - 1);
+$breakpointMobile: 479px;
+
+//
+// NB
+//
+
+$nbCent: 32%;
+$nbSec: 256ms;
+
+// Spacing
+$nbSpace: 2.5rem;
+$nbSpaceSmall: $nbSpace * 0.6;
+$nbSpaceXsmall: $nbSpace * 0.3;
+$nbSpaceLarge: $nbSpace * 1.4;
+$nbSpaceXlarge: $nbSpace * 2;
+$nbGutter: $nbSpace * 0.2;
+$nbGutterSmall: $nbGutter / 2;
+$nbGutterXsmall: $nbGutterSmall / 2;
+
+// Colour
+$nbWhite: #fff;
+$nbBlack: #241d1e;
+$nbRed: #e11e2f;
+$nbGrey: lighten($nbBlack, $nbCent);
+$nbLightGrey: lighten($nbGrey, $nbCent);
+$nbOffWhite: lighten($nbLightGrey, $nbCent / 2);
+
+// Animation
+$nbSpeed: $nbSec;
+$nbSpeedShort: $nbSpeed / 2;
+$nbSpeedLong: $nbSpeed * 2;
+
+//
+// Theme
+//
+
+$themeVar: 0; // Example, not used
+
+$quote: 'left-quotes-sign';

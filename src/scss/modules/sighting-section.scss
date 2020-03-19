@@ -1,0 +1,131 @@
+.sighting-section {
+    background-color: $petrol;
+    padding: 120px 0 90px;
+
+    .uk-grid {
+        margin-bottom: 35px;
+    }
+
+    .uk-card {
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 0 40px 25px;
+    }
+
+    .uk-card-body {
+        padding: 40px 33px 40px 35px;
+
+        h3,
+        p {
+            color: $petrol;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width: $breakpointMedium) {
+        padding: 70px 0 60px;
+
+        .uk-container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .uk-grid {
+            margin-bottom: 40px;
+        }
+
+        .uk-flex {
+            flex-direction: column;
+        }
+
+        .uk-card {
+            padding: 0 30px 35px;
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+        padding: 50px 0 80px;
+
+        .uk-container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .uk-grid {
+            margin-bottom: 50px;
+        }
+
+        *+.uk-grid-margin,
+        .uk-grid+.uk-grid,
+        .uk-grid>.uk-grid-margin {
+            margin-top: 15px;
+        }
+
+        .uk-card {
+            padding: 0 10px 15px;
+        }
+
+        .uk-card-body {
+            padding: 25px 20px 20px;
+
+            h3 {
+                margin-bottom: 7px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+        .uk-button {
+            float: left;
+            margin-left: 0;
+        }
+    }
+}
+
+.sighting-text {
+    padding-bottom: 20px;
+
+    p {
+        color: $white;
+        font-size: 24px;
+    }
+
+    @media (max-width: $breakpointMedium) {
+        padding-bottom: 30px;
+
+        h2,
+        p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: $breakpointSmall) {
+        padding-bottom: 15px;
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.review-section {
+    padding: 70px 0 85px;
+
+    h2 {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .review-box {
+        padding: 0 100px;
+
+        .uk-text-uppercase {
+            display: inline-block;
+            position: relative;
+            padding-left: 10px;
+
+            &::before {
+                content: '-';
+                font-family: $font-default;
+                font-size: 12px;
+                color: inherit;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                position: absolute;
+            }
+        }
+
+        p {
+            font-size: 24px;
+            color: $petrol;
+            font-weight: $light;
+            margin-bottom: 35px;
+        }
+
+        span {
+            color: rgba($black, .7);
+        }
+    }
+
+    .stars {
+        margin-bottom: 45px;
+        list-style-type: none;
+
+        li {
+            &:not(:first-of-type) {
+                padding-left: 10px;
+            }
+
+            &::before {
+                color: $yellow;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .uk-slidenav {
+        margin-left: 0;
+        margin-right: 0;
+        color: transparent;
+        transition: $nbSec ease-in-out;
+
+        &::before {
+            font-size: 65px;
+            color: $petrol;
+        }
+
+        svg {
+            display: none;
+        }
+
+        @include hover {
+            border: 0;
+        }
+
+        &:focus,
+        &:active {
+            border: 0;
+        }
+    }
+
+    .font-arrow-longer-left {
+        @include hover {
+            transform: translateY(-50%) translateY(-15px) translateX(-15%);
+        }
+
+        &:focus,
+        &:active {
+            transform: translateY(-50%) translateY(-15px) translateX(-15%);
+        }
+    }
+
+    .font-arrow-longer-right {
+        @include hover {
+            transform: translateY(-50%) translateY(-15px) translateX(15%);
+        }
+
+        &:focus,
+        &:active {
+            transform: translateY(-50%) translateY(-15px) translateX(15%);
+        }
+    }
+
+    @media (max-width: $breakpointMedium) {
+        padding: 70px 0 45px;
+
+        .uk-container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .review-box {
+            padding: 0 70px;
+
+            span {
+                font-size: 15px;
+            }
+        }
+
+        .stars {
+            margin-bottom: 30px;
+        }
+    }
+}

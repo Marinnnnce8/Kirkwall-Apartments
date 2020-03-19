@@ -1,0 +1,132 @@
+@font-face {
+	font-family: 'svgicons';
+	src: url('../fonts/svgicons.woff2') format('woff2'),
+		url('../fonts/svgicons.woff') format('woff'),
+		url('../fonts/svgicons.ttf') format('truetype');
+}
+
+@mixin font-styles {
+	font-family: 'svgicons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+	display: block;
+	line-height: 1;
+}
+
+%font {
+	@include font-styles;
+}
+
+@function font-char($filename) {
+	$char: "";
+
+	@if $filename == arrow-down {
+		$char: '\E001';
+	}
+	@if $filename == arrow-left {
+		$char: '\E002';
+	}
+	@if $filename == arrow-longer-left {
+		$char: '\E003';
+	}
+	@if $filename == arrow-longer-right {
+		$char: '\E004';
+	}
+	@if $filename == arrow-right {
+		$char: '\E005';
+	}
+	@if $filename == down-arrow {
+		$char: '\E006';
+	}
+	@if $filename == envelope {
+		$char: '\E007';
+	}
+	@if $filename == facebook {
+		$char: '\E008';
+	}
+	@if $filename == left-quotes-sign {
+		$char: '\E009';
+	}
+	@if $filename == phone {
+		$char: '\E00A';
+	}
+	@if $filename == pin {
+		$char: '\E00B';
+	}
+	@if $filename == right-arrow-circle {
+		$char: '\E00C';
+	}
+	@if $filename == star {
+		$char: '\E00D';
+	}
+	@if $filename == tick {
+		$char: '\E00E';
+	}
+
+	@return $char;
+}
+
+@mixin font($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %font;
+		} @else {
+			@include font-styles;
+		}
+		content: font-char($filename);
+	}
+}
+
+[class*='font-ico'] {
+	display: inline-block;
+}
+
+.font-arrow-down {
+	@include font(arrow-down);
+}
+.font-arrow-left {
+	@include font(arrow-left);
+}
+.font-arrow-longer-left {
+	@include font(arrow-longer-left);
+}
+.font-arrow-longer-right {
+	@include font(arrow-longer-right);
+}
+.font-arrow-right {
+	@include font(arrow-right);
+}
+.font-down-arrow {
+	@include font(down-arrow);
+}
+.font-envelope {
+	@include font(envelope);
+}
+.font-facebook {
+	@include font(facebook);
+}
+.font-left-quotes-sign {
+	@include font(left-quotes-sign);
+}
+.font-phone {
+	@include font(phone);
+}
+.font-pin {
+	@include font(pin);
+}
+.font-right-arrow-circle {
+	@include font(right-arrow-circle);
+}
+.font-star {
+	@include font(star);
+}
+.font-tick {
+	@include font(tick);
+}
+

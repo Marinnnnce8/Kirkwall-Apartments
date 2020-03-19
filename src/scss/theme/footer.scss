@@ -1,0 +1,159 @@
+.footer-title {
+    margin-bottom: 65px;
+
+    h2 {
+        color: $petrol;
+        font-size: 31px;
+        margin-bottom: 10px;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+    span {
+        font-size: 14px;
+        letter-spacing: 4.5px;
+    }
+}
+
+.contact-container {
+
+    >.uk-container {
+        border-top: 2px solid $gray-light;
+        padding-top: 75px;
+    }
+
+    span,
+    a {
+        color: $petrol;
+        display: block;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .contact,
+    .address {
+        margin-bottom: 0;
+        padding-bottom: 80px;
+    }
+
+    .contact {
+        border-right: 2px solid $gray-light;
+
+        li {
+            width: 50%;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 75px;
+
+            &:not(:last-of-type) {
+                margin-bottom: 50px;
+            }
+
+            span {
+                font-size: 18px;
+                font-weight: $bold;
+            }
+
+            a {
+                font-size: 16px;
+                font-weight: $medium;
+            }
+
+            span:last-of-type {
+                margin-bottom: 8px;
+            }
+
+            .icon {
+                position: absolute;
+                background-color: $blue;
+                border-radius: 50%;
+                left: 0;
+                top: -10px;
+                width: 50px;
+                height: 50px;
+
+                &::before {
+                    color: $white;
+                    font-size: 24px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+    .address {
+        margin-top: 0;
+        position: relative;
+
+        &::before {
+            display: block;
+            content: attr(aria-label);
+            font-size: 120%;
+            font-weight: bold;
+            position: relative;
+            color: $petrol;
+            margin-bottom: 40px;
+            padding-left: 100px;
+        }
+
+        li {
+            margin-bottom: 35px;
+            padding-left: 100px;
+        }
+
+        span,
+        a {
+            font-size: 16px;
+        }
+
+        span {
+            font-weight: $medium;
+        }
+
+        a {
+            font-weight: $bold;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: $breakpointMedium) {
+
+        >.uk-container {
+            padding-top: 70px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .contact li {
+            width: 100%;
+
+            .icon {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        .address::before,
+        .address li {
+            padding-left: 30px;
+        }
+    }
+}
+
+.footer-bottom {
+    background-color: $petrol-dark;
+    font-size: 16px;
+    padding: 25px 0;
+
+    @media (max-width: $breakpointMedium) {
+        .uk-container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}

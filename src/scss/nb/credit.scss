@@ -1,0 +1,20 @@
+.nb-credit {
+	line-height: 1;
+	color: $white;
+	a {
+		color: $white;
+		transition: $nbSec ease-in-out;
+
+		@include hover {
+			color: $nbRed;
+			text-decoration: none;
+		}
+
+		img {
+			width: 30px;
+			height: auto;
+			vertical-align: middle;
+			margin-left: 20px;
+		}
+	}
+}

@@ -1,0 +1,74 @@
+//----------  typography
+//------------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-default;
+	font-weight: normal;
+	color: $white;
+}
+
+h1 {
+	font-size: 50px;
+	font-weight: $bold;
+	text-transform: uppercase;
+	line-height: 1.4;
+	margin-bottom: 0;
+
+	@media (max-width: $breakpointMedium) {
+		font-size: 40px;
+	}
+	@media (max-width: $breakpointSmall) {
+		font-size: 24px;
+	}
+}
+
+h2 {
+	font-size: 33px;
+	font-weight: $bold;
+	@media (max-width: $breakpointMedium) {
+		font-size: 30px;
+	}
+	@media (max-width: $breakpointSmall) {
+		font-size: 20px;
+	}
+}
+
+h3 {
+	font-size: 30px;
+	font-weight: $bold;
+	@media (max-width: $breakpointSmall) {
+		font-size: 18px;
+	}
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 20px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+
+p {
+	font-size: 17px;
+}
+
+
+ol li {
+	list-style-type: decimal-leading-zero;
+}
+
+
+img {
+	max-width: 100%;
+}

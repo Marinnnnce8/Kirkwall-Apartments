@@ -1,0 +1,40 @@
+//----------  button
+//------------------------------------------------------------------------------
+a,
+button {
+	appearance: none;
+	outline: none;
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+}
+
+.scroll-button {
+	background-color: $white;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	border-radius: 50%;
+	position: relative;
+
+	&::before {
+		top: -17px;
+		left: 50%;
+		transform: translateX(-50%);
+		position: absolute;
+		color: $blue-dark;
+		font-size: 65px;
+	}
+
+	@media (max-width: $breakpointSmall) {
+		width: 40px;
+		height: 40px;
+	}
+}

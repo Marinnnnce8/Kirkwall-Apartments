@@ -1,0 +1,110 @@
+//----------  banner
+//------------------------------------------------------------------------------
+.banner {
+	.uk-background-cover {
+		height: 566px;
+	}
+
+	.scroll-button {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+	}
+
+	@media (max-width: $breakpointMedium) {
+		>.uk-container {
+			padding: 0;
+		}
+	}
+
+	@media (max-width: $breakpointSmall) {
+		.uk-background-cover {
+			height: 335px;
+		}
+	}
+}
+
+.banner-title {
+	bottom: 60px;
+	max-width: 1050px;
+	width: 100%;
+
+	@media (max-width: $breakpointMedium) {
+		bottom: 50px;
+		padding: 0 65px;
+	}
+
+	@media (max-width: $breakpointSmall) {
+		bottom: 35px;
+		padding: 0 18px;
+	}
+}
+
+.banner-text {
+	background-image: linear-gradient(to right, $gblue-1, $gblue-2, $gblue-3, $gblue-4, $gblue-5);
+	padding: 155px 0 120px;
+	margin-top: -155px;
+
+	.uk-flex {
+		padding-top: 75px;
+	}
+
+	.uk-width-1-2\@m:last-of-type {
+		padding-left: 40px;
+	}
+
+	h2,
+	p {
+		margin-bottom: 0;
+	}
+
+	p {
+		color: $white;
+		font-size: 24px;
+		font-weight: $medium;
+	}
+
+	@media (max-width: $breakpointMedium) {
+		margin-top: 0;
+		padding: 45px 0 70px;
+
+		.uk-flex {
+			padding-top: 30px;
+			flex-direction: column;
+		}
+
+		.uk-width-1-2\@m:last-of-type {
+			padding-left: 0;
+		}
+
+		h2,
+		p {
+			text-align: center;
+		}
+
+		h2 {
+			margin-bottom: 25px;
+		}
+
+		p {
+			font-size: 22px;
+		}
+	}
+
+	@media (max-width: $breakpointSmall) {
+		padding: 25px 7px 50px;
+
+		.uk-flex {
+			padding-top: 25px;
+		}
+
+		h2 {
+			margin-bottom: 15px;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+}

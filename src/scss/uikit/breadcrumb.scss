@@ -1,0 +1,50 @@
+.uk-breadcrumb {
+    li {
+
+        a,
+        span {
+            text-transform: uppercase;
+            font-size: 12.25px;
+        }
+
+        a {
+            color: $petrol;
+            position: relative;
+            &::before {
+                position: absolute;
+                left: 0;
+                content: '';
+                height: 1px;
+                background-color: $petrol-medium;
+                width: calc(100% - 30px);
+                opacity: 0;
+                transition: $nbSec ease-in-out;
+                bottom: 0;
+            }
+            svg {
+                color: $petrol-medium;
+                fill: $petrol-medium;
+                bottom: 1px;
+                position: relative;
+                margin-left: 10px;
+            }
+            &:not(:first-of-type) {
+                padding-left: 7px;
+            }
+            @include hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        span {
+            color: $petrol-gray;
+            padding: 0 7px;
+        }
+    }
+
+    &>:nth-child(n+2):not(.uk-first-column)::before {
+        display: none;
+    }
+}
