@@ -1,3 +1,15 @@
+.footer {
+    padding-top: 75px;
+
+    @media (max-width: $breakpointMedium) {
+        padding-top: 70px;
+    }
+
+    @media (max-width: $breakpointSmall) {
+        padding-top: 50px;
+    }
+}
+
 .footer-title {
     margin-bottom: 65px;
 
@@ -13,19 +25,27 @@
         font-size: 14px;
         letter-spacing: 4.5px;
     }
+
+    @media (max-width: $breakpointSmall) {
+        margin-bottom: 40px;
+    }
 }
 
 .contact-container {
-
-    >.uk-container {
-        border-top: 2px solid $gray-light;
-        padding-top: 75px;
-    }
 
     span,
     a {
         color: $petrol;
         display: block;
+    }
+
+    a {
+        transition: $nbSec ease-in-out;
+        @include hover {
+            color: $petrol;
+            text-decoration: none;
+            opacity: .9;
+        }
     }
 
     li {
@@ -118,13 +138,28 @@
         a {
             font-weight: $bold;
             margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $petrol;
+                content: '';
+            }
+            @include hover {
+                &::before {
+                    opacity: .9;
+                }
+            }
         }
     }
 
     @media (max-width: $breakpointMedium) {
 
         >.uk-container {
-            padding-top: 70px;
             padding-left: 40px;
             padding-right: 40px;
         }
@@ -143,10 +178,63 @@
             padding-left: 30px;
         }
     }
+
+    @media (max-width: $breakpointXsmallMax) {
+        >.uk-container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .uk-flex {
+            flex-direction: column;
+        }
+
+        .contact {
+            border: 0;
+            padding-left: 15px;
+            padding-bottom: 55px;
+
+            li {
+                max-width: 280px;
+                margin: 0 auto;
+                &:not(:last-of-type) {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        .contact li,
+        .address li {
+
+            span,
+            a {
+                font-size: 15px;
+            }
+        }
+
+        .address {
+            padding-left: 0;
+            text-align: center;
+            padding-bottom: 10px;
+            li {
+                padding-left: 0;
+                margin-bottom: 25px;
+            }
+            &::before {
+                font-size: 15px;
+                padding-left: 0;
+                margin-bottom: 25px;
+            }
+            a {
+                margin-bottom: 5px;
+            }
+        }
+    }
 }
 
 .footer-bottom {
     background-color: $petrol-dark;
+    font-family: $lato;
     font-size: 16px;
     padding: 25px 0;
 
@@ -154,6 +242,12 @@
         .uk-container {
             padding-left: 40px;
             padding-right: 40px;
+        }
+    }
+    @media (max-width: $breakpointXsmallMax) {
+        padding: 40px 0 30px;
+        .uk-flex {
+            flex-direction: column;
         }
     }
 }

@@ -3,6 +3,7 @@
 	src: url('../fonts/svgicons.woff2') format('woff2'),
 		url('../fonts/svgicons.woff') format('woff'),
 		url('../fonts/svgicons.ttf') format('truetype');
+		font-display: swap;
 }
 
 @mixin font-styles {
@@ -50,23 +51,26 @@
 	@if $filename == facebook {
 		$char: '\E008';
 	}
-	@if $filename == left-quotes-sign {
+	@if $filename == focus {
 		$char: '\E009';
 	}
-	@if $filename == phone {
+	@if $filename == left-quotes-sign {
 		$char: '\E00A';
 	}
-	@if $filename == pin {
+	@if $filename == phone {
 		$char: '\E00B';
 	}
-	@if $filename == right-arrow-circle {
+	@if $filename == pin {
 		$char: '\E00C';
 	}
-	@if $filename == star {
+	@if $filename == right-arrow-circle {
 		$char: '\E00D';
 	}
-	@if $filename == tick {
+	@if $filename == star {
 		$char: '\E00E';
+	}
+	@if $filename == tick {
+		$char: '\E00F';
 	}
 
 	@return $char;
@@ -111,6 +115,9 @@
 .font-facebook {
 	@include font(facebook);
 }
+.font-focus {
+	@include font(focus);
+}
 .font-left-quotes-sign {
 	@include font(left-quotes-sign);
 }
@@ -129,4 +136,4 @@
 .font-tick {
 	@include font(tick);
 }
-
+

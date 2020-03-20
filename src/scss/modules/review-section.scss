@@ -1,5 +1,6 @@
 .review-section {
     padding: 70px 0 85px;
+    border-bottom: 2px solid $gray-light;
 
     h2 {
         border: 0;
@@ -13,7 +14,9 @@
     }
 
     .review-box {
-        padding: 0 100px;
+        max-width: 80%;
+        width: 100%;
+        margin: 0 auto;
 
         .uk-text-uppercase {
             display: inline-block;
@@ -34,7 +37,8 @@
 
         p {
             font-size: 24px;
-            color: $petrol;
+            color: $green;
+            font-family: $lato;
             font-weight: $light;
             margin-bottom: 35px;
         }
@@ -48,7 +52,8 @@
         margin-bottom: 45px;
         list-style-type: none;
 
-        li {
+        span {
+            display: inline-block;
             &:not(:first-of-type) {
                 padding-left: 10px;
             }
@@ -60,50 +65,37 @@
         }
     }
 
-    .uk-slidenav {
-        margin-left: 0;
-        margin-right: 0;
-        color: transparent;
-        transition: $nbSec ease-in-out;
+    .uk-slidenav a {
+        text-decoration: none;
+        margin: 0;
+        width: 75px;
+        height: 75px;
 
         &::before {
-            font-size: 65px;
+            font-size: 95px;
             color: $petrol;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 50%;
+            margin: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: $nbSec ease-in-out;
         }
 
-        svg {
-            display: none;
+        &:first-of-type {
+            transform: translateY(-50%) translateX(100%);
+        }
+
+        &:last-of-type {
+            transform: translateY(-50%) translateX(-100%);
         }
 
         @include hover {
-            border: 0;
-        }
-
-        &:focus,
-        &:active {
-            border: 0;
-        }
-    }
-
-    .font-arrow-longer-left {
-        @include hover {
-            transform: translateY(-50%) translateY(-15px) translateX(-15%);
-        }
-
-        &:focus,
-        &:active {
-            transform: translateY(-50%) translateY(-15px) translateX(-15%);
-        }
-    }
-
-    .font-arrow-longer-right {
-        @include hover {
-            transform: translateY(-50%) translateY(-15px) translateX(15%);
-        }
-
-        &:focus,
-        &:active {
-            transform: translateY(-50%) translateY(-15px) translateX(15%);
+            &::before {
+                color: rgba($petrol, .7);
+            }
         }
     }
 
@@ -116,7 +108,7 @@
         }
 
         .review-box {
-            padding: 0 70px;
+            max-width: 73%;
 
             span {
                 font-size: 15px;
@@ -127,4 +119,31 @@
             margin-bottom: 30px;
         }
     }
+
+    @media (max-width: $breakpointSmall) {
+        padding: 70px 0 55px;
+
+        .review-box {
+            max-width: 100%;
+            padding: 0 10px;
+        }
+
+        .uk-slidenav {
+            max-width: 180px;
+            margin: 35px auto 0;
+            position: relative;
+
+            a {
+                bottom: 0;
+            }
+        }
+
+        .stars {
+            padding-left: 0;
+        }
+    }
+}
+
+.review-section-border-top {
+    border-top: 2px solid $gray-light;
 }

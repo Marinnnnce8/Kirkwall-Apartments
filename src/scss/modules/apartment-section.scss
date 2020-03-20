@@ -3,7 +3,7 @@
 
     .uk-card-default {
         box-shadow: none;
-        min-height: 100%;
+        min-height: 770px;
     }
 
     .uk-card-title,
@@ -11,17 +11,24 @@
         color: $petrol;
     }
 
-    .uk-card-media-top {
-        min-height: 600px;
-    }
-
     .uk-card-body {
         margin-top: -100px;
-        padding: 40px 90px 0 0;
+        padding: 35px 35px 65px 0;
+        z-index: 1;
+        max-width: 61%;
+        width: 100%;
+        position: relative;
 
         p {
             margin-top: 0;
             line-height: 1.8;
+            color: $green;
+        }
+
+        .uk-button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
     }
 
@@ -30,18 +37,24 @@
     }
 
     .uk-slidenav {
-        bottom: 150px;
         height: auto;
         padding: 10px 20px;
         margin: 0;
 
         &::before {
-            font-size: 65px;
+            font-size: 85px;
             color: $petrol;
+            transition: $nbSec ease-in-out;
         }
 
         svg {
             display: none;
+        }
+
+        @include hover {
+            &::before {
+                opacity: .7;
+            }
         }
     }
 
@@ -52,7 +65,22 @@
     .uk-slidenav-container {
         position: absolute;
         right: 0;
-        bottom: 80px;
+        bottom: 0;
+        transform: translateY(100%);
+    }
+
+    .uk-button-default {
+        max-width: 100%;
+    }
+
+    @media (max-width: $breakpointLarge) {
+        .uk-slidenav::before {
+            font-size: 75px;
+        }
+
+        .uk-button-default {
+            min-width: auto;
+        }
     }
 
     @media (max-width: $breakpointMedium) {
@@ -68,6 +96,18 @@
         .uk-grid>.uk-grid-margin {
             margin-top: 50px;
         }
+
+        .uk-card-default {
+            min-height: 740px;
+        }
+
+        .uk-slidenav::before {
+            font-size: 85px;
+        }
+
+        .uk-button-default {
+            min-width: 290px;
+        }
     }
 
     @media (min-width: 1200px) {
@@ -79,16 +119,24 @@
     @media (max-width: $breakpointSmall) {
         padding: 25px 0 50px;
 
+        >.uk-container {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
         *+.uk-grid-margin,
         .uk-grid+.uk-grid,
         .uk-grid>.uk-grid-margin {
             margin-top: 30px;
         }
-        .uk-slideshow-items {
-            min-height: 495px !important;// sass-lint:disable-line no-important
+
+        .uk-card-default {
+            box-shadow: none;
+            min-height: 440px;
         }
-        .uk-card-media-top {
-            min-height: 260px;
+
+        .uk-slideshow-items {
+            min-height: 260px !important; // sass-lint:disable-line no-important
         }
 
         .uk-card-title {
@@ -97,16 +145,37 @@
         }
 
         .uk-card-body {
-            padding: 30px 0 0;
+            padding: 30px 5px 65px 0;
             width: 100%;
-            max-width: 195px;
+            max-width: 65%;
             margin-top: -45px;
+
             p {
                 font-size: 15px;
             }
         }
+
         .uk-slidenav {
             width: 50px;
+            padding: 0;
+
+            &::before {
+                font-size: 54px;
+            }
+        }
+
+        .uk-slidenav-previous::before {
+            content: font-char($arrow-left);
+        }
+
+        .uk-slidenav-next::before {
+            content: font-char($arrow-right);
+        }
+
+        .uk-button-default {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
         }
     }
 }

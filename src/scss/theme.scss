@@ -27,15 +27,10 @@
 
 // NB
 @import "nb/block.scss";
-@import "nb/responsive.scss";
-@import "nb/file-icon.scss";
-@import "nb/legal.scss";
 @import "nb/credit.scss";
 
 // Modules
 @import 'modules/banner.scss';
-@import 'modules/basic-block.scss';
-@import 'modules/slider.scss';
 @import 'modules/apartment-section.scss';
 @import 'modules/sighting-section.scss';
 @import 'modules/review-section.scss';
@@ -51,7 +46,8 @@
 // Template | Remove or Integrate
 
 // uikit/base
-a, .uk-link {
+a,
+.uk-link {
 	color: $nbRed;
 }
 
@@ -59,7 +55,7 @@ a, .uk-link {
 .uk-link-toggle:hover .uk-link,
 .uk-link:hover,
 a:hover {
-	color: $nbRed;
+	color: transparent;
 }
 
 // uikit/logo
@@ -71,9 +67,9 @@ a:hover {
 }
 
 // uikit/breadcrumb
-.uk-breadcrumb > :last-child > * {
-    overflow: hidden;
-    text-overflow: ellipsis;
+.uk-breadcrumb> :last-child>* {
+	overflow: hidden;
+	text-overflow: ellipsis;
 	white-space: nowrap;
 	display: inline-block;
 	vertical-align: middle;
@@ -91,39 +87,68 @@ a:hover {
 .uk-radio:not(.uk-form-danger),
 .uk-checkbox:checked:not(.uk-form-danger),
 .uk-radio:checked:not(.uk-form-danger) {
-	border-color: $nbBlack;
+	border: 2px solid $gray-input;
+	color: $navy;
+	font-size: 16px;
+	padding: 0 18px;
+	&::placeholder {
+		font-size: inherit;
+		color: $placeholder-green;
+	}
+}
+
+.uk-input:not(.uk-form-danger):focus,
+.uk-select:not(.uk-form-danger):focus,
+.uk-textarea:not(.uk-form-danger):focus,
+.uk-checkbox:not(.uk-form-danger):focus,
+.uk-radio:not(.uk-form-danger):focus,
+.uk-checkbox:checked:not(.uk-form-danger):focus,
+.uk-radio:checked:not(.uk-form-danger):focus {
+	background-color: $lightest-blue;
+	border-color: $navy;
 }
 
 // theme/header
 #nav {
 
-	@media (max-width: $breakpointXsmallMax) {
+	@media (max-width: $breakpointTabletMin) {
 		background-color: $nbWhite;
 		border-top: 1px solid $nbOffWhite;
-		height: calc(100% - 80px);
 		left: 0;
-		overflow: auto;
-		position: fixed;
-		top: 80px;
+		position: absolute;
+		top: 58px;
 		width: 100%;
+		z-index: 10;
 
 		&.nav-toggle {
 			display: none;
 		}
 
 		.uk-navbar-nav {
-			display: block;
+			display: flex;
+			align-items: center;
 			padding-bottom: $nbGutter;
 			padding-top: $nbGutter;
+			width: 100%;
+		}
+
+		.uk-dropdown {
+			padding: 15px;
 		}
 
 		.uk-navbar-item,
-		.uk-navbar-nav > li > a,
-		.uk-navbar-toggle {
-			display: block;
+		.uk-navbar-nav>li>a,
+		.uk-navbar-nav>li>button {
 			min-height: 0;
 			padding-bottom: $nbGutter;
 			padding-top: $nbGutter;
+			padding-left: 3px;
+			padding-right: 3px;
+			font-size: 11px;
+		}
+
+		.uk-dropdown>li>a {
+			font-size: 11px;
 		}
 	}
 }

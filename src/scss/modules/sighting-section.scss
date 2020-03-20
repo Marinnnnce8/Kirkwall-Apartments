@@ -29,8 +29,14 @@
         p {
             font-size: 16px;
             line-height: 1.8;
+            color: $green;
             margin-top: 0;
         }
+    }
+
+    .uk-button-default {
+        max-width: 350px;
+        width: 100%;
     }
 
     @media (max-width: $breakpointMedium) {
@@ -87,9 +93,10 @@
                 font-size: 15px;
             }
         }
-        .uk-button {
+        .uk-button-default {
             float: left;
             margin-left: 0;
+            max-width: 250px;
         }
     }
 }

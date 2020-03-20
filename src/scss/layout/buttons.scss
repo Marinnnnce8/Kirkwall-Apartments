@@ -16,13 +16,130 @@ input[type='submit'] {
 	padding: 0;
 }
 
+.uk-button {
+	background-image: linear-gradient(to right, #d33e0d, #d95012, #de6119, #e47021, #e97f2a);
+	font-size: 14px;
+	font-weight: $bold;
+	color: $white;
+	padding: 12px 95px 13px 30px;
+	position: relative;
+	text-align: left;
+	transition: $nbSec ease-in-out;
+
+	&:not(.scroll-button) {
+		@include hover {
+			background-color: $orange-link;
+			color: $white;
+		}
+	}
+
+	&:not(.uk-button-primary):not(.scroll-button)::before {
+		color: $white;
+		position: absolute;
+		right: 28px;
+		top: 50%;
+		transform: translateY(-50%);
+		content: font-char($arrow-right);
+		font-size: 28px;
+		font-family: 'svgicons';
+	}
+
+	@media (max-width: $breakpointMedium) {
+		font-size: 13px;
+	}
+
+	@media (max-width: $breakpointSmall) {
+		padding: 12px 50px 13px 30px;
+	}
+}
+
+.uk-button-default,
+.uk-button-secondary {
+	min-width: 290px;
+
+	@media (max-width: $breakpointMedium) {
+		min-width: 250px;
+	}
+}
+
+.uk-button-primary {
+	padding: 16px 35px 25px 30px;
+
+	span {
+		position: relative;
+		display: block;
+		padding-right: 30px;
+
+		&::before {
+			color: $white;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			content: font-char($arrow-right);
+			font-size: 28px;
+			font-family: 'svgicons';
+		}
+
+		&::after {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			content: '';
+			width: 100%;
+			background-color: $white;
+			height: 2px;
+		}
+	}
+
+	@media (max-width: $breakpointMedium) {
+		padding: 16px 25px 25px 20px;
+	}
+
+	@media (max-width: $breakpointSmall) {
+		font-size: 12px;
+	}
+}
+
+.uk-button-primary,
+.uk-button-default {
+	border: 0;
+
+	@include hover {
+		box-shadow: 400px 0 0 0 rgba($orange-link, .95) inset;
+		border: 0;
+	}
+}
+
+.uk-button-secondary {
+	background-image: none;
+	background-color: $white;
+	border: 2px solid $orange-link;
+	color: $orange-link;
+
+	&:not(.uk-button-primary):not(.scroll-button)::before {
+		color: $orange-link;
+	}
+
+	@include hover {
+		box-shadow: 300px 0 0 0 rgba($orange-link, .95) inset;
+		border-color: $orange-link;
+
+		&:not(.uk-button-primary):not(.scroll-button)::before {
+			color: $white;
+		}
+	}
+}
+
 .scroll-button {
+	background-image: none;
 	background-color: $white;
 	width: 50px;
 	height: 50px;
 	padding: 0;
 	border-radius: 50%;
 	position: relative;
+	min-width: auto;
 
 	&::before {
 		top: -17px;
@@ -31,6 +148,13 @@ input[type='submit'] {
 		position: absolute;
 		color: $blue-dark;
 		font-size: 65px;
+		transition: $nbSec ease-in-out;
+	}
+
+	@include hover {
+		&::before {
+			top: -5px;
+		}
 	}
 
 	@media (max-width: $breakpointSmall) {

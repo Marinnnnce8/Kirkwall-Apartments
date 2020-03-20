@@ -1,14 +1,40 @@
 //----------  forms
 //------------------------------------------------------------------------------
-input,
-textarea {
-	background: $white;
-	border-radius: 0;
-	box-shadow: none;
-	color: $black;
-	height: 25px;
-	padding: 0 10px;
-	&::placeholder {
-		color: $black;
+// sass-lint:disable class-name-format
+.uk-form-stacked {
+	.uk-first-column {
+		padding-left: 0;
+	}
+
+	.uk-form-label {
+		font-size: 12px;
+		font-weight: $bold;
+		text-transform: uppercase;
+		color: $petrol;
+	}
+
+	.uk-grid {
+		margin-left: 0;
+		margin-bottom: 15px;
+	}
+
+	.uk-button {
+		min-width: 207px;
+		padding-left: 40px;
+	}
+}
+
+.InputfieldText,
+.InputfieldEmail {
+	margin-bottom: 15px;
+}
+
+.Inputfield {
+	input {
+		min-height: 50px;
+	}
+
+	textarea {
+		resize: none;
 	}
 }

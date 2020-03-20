@@ -1,3 +1,36 @@
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active),
+screen and (-ms-high-contrast: none) {
 
+    .uk-navbar-item,
+    .uk-navbar-nav>li>a,
+    .uk-navbar-toggle {
+        line-height: 80px;
+    }
+
+    .apartment-section .uk-slidenav-container {
+        right: 11px;
+        transform: translateY(100%) translateX(-10%);
+    }
+
+    .sighting-section {
+        .uk-card {
+            position: relative;
+        }
+
+        .uk-card-body {
+            position: absolute;
+            left: 25px;
+            bottom: 40px;
+            width: calc(100% - 50px);
+        }
+    }
+
+    .nb-block-facilities table {
+        table-layout: fixed;
+
+        th:first-of-type,
+        td:first-of-type {
+            width: 140px;
+        }
+    }
 }

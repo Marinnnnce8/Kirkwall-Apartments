@@ -1,9 +1,12 @@
 .nb-credit {
 	line-height: 1;
 	color: $white;
+
 	a {
 		color: $white;
 		transition: $nbSec ease-in-out;
+		font-family: $lato;
+		font-weight: $light;
 
 		@include hover {
 			color: $nbRed;
@@ -15,6 +18,18 @@
 			height: auto;
 			vertical-align: middle;
 			margin-left: 20px;
+		}
+	}
+
+	@media (max-width: $breakpointXsmallMax) {
+		text-align: center;
+
+		a {
+			font-size: 15px;
+			img {
+				width: 15px;
+				margin-left: 17px;
+			}
 		}
 	}
 }

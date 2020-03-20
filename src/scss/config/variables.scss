@@ -2,6 +2,7 @@
 //------------------------------------------------------------------------------
 
 $font-default: 'Quicksand', sans-serif;
+$lato: 'Lato', sans-serif;
 $bold: 700;
 $semi-bold: 600;
 $medium: 500;
@@ -18,15 +19,23 @@ $petrol-gray: #acc0cc;
 $petrol-dark: #1b2f3b;
 $gray-light: #e9ecee;
 $gray: #eaedf0;
+$gray-input: #d1dce0;
+$lightest-blue: #dceaf5;
 $blue: #66aad5;
+$green: #487582;
+$placeholder-green: #28516d;
+$blue-light: #d1e8f7;
+$blue-focus: #97bbd7;
 $blue-dark: #1c4055;
+$navy: #1d4056;
 $gblue-1: #69a9e4;
 $gblue-2: #61b0e5;
 $gblue-3: #5bb7e4;
 $gblue-4: #5abee3;
 $gblue-5: #5dc4e0;
+$orange-link: #d33e0d;
+$orange-link-light: #e97f2a;
 $yellow: #e6aa3d;
-$yellow-link: #edad2d;
 $orange: #f3c570;
 $orange-light: #fff8eb;
 
@@ -76,11 +85,14 @@ $grid-gutter-width: 30px !default;
 $breakpointSmall: 640px;
 $breakpointMedium: 960px;
 $breakpointLarge: 1200px;
+$breakpointMediumDesc: 1300px;
 $breakpointXlarge: 1600px;
 $breakpointXsmallMax: ($breakpointSmall - 1);
 $breakpointSmallMax: ($breakpointMedium - 1);
 $breakpointMediumMax: ($breakpointLarge - 1);
 $breakpointLargeMax: ($breakpointXlarge - 1);
+$breakpointLargeMaxL: ($breakpointXlarge + 1);
+$breakpointTabletMin: 767px;
 $breakpointMobile: 479px;
 
 //
@@ -120,3 +132,7 @@ $nbSpeedLong: $nbSpeed * 2;
 $themeVar: 0; // Example, not used
 
 $quote: 'left-quotes-sign';
+$arrow-right: 'arrow-right';
+$arrow-left: 'arrow-left';
+$tick: 'tick';
+$focus: 'focus';
